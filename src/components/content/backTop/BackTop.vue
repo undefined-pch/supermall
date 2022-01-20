@@ -1,23 +1,26 @@
 <template>
-  <div class="back-top" @click="topClick">
-    <slot></slot>
-  </div>
+	<div class="back-top">
+		<img src="~assets/images/back-top.png" />
+	</div>
 </template>
 
 <script>
 	export default {
-		name: "BackTop",
-    methods: {
-		  topClick: function () {
-        this.$emit('backTop');
-      }
-    }
+		name: 'BackTop',
+		methods: {
+			
+		}
 	}
 </script>
 
-<style scoped>
-  .back-top img {
-    width: 43px;
-    height: 43px;
-  }
+<style lang="less" scoped>
+	.back-top {
+		img {
+			width: 30px;
+			height: 30px;
+		}
+		position: fixed;
+		bottom: 55px;
+		right: 10px;;
+	}
 </style>

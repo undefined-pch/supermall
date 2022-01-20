@@ -35,7 +35,7 @@
 <script>
   import UserInfo from './childComps/UserInfo'
   import ListView from './childComps/ListView'
-  import NavBar from 'common/navbar/NavBar'
+  import NavBar from '@/components/common/navbar/NavBar'
 
 	export default {
 		name: "Profile",

@@ -5,8 +5,8 @@
 </template>
 
 <script>
-  import GridView from 'common/gridView/GridView'
-  import GoodsListItem from 'views/home/childComps/GoodsListItem'
+  import GridView from '@/components/common/gridView/GridView'
+  import GoodsListItem from '@/components/content/goodsList/GoodsListItem'
 
   export default {
     name: "TabContentDetail",

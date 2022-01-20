@@ -1,5 +1,5 @@
 {
-  "name": "hy-mall",
+  "name": "supermll",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,16 +7,21 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "better-scroll": "^1.13.2",
-    "vue": "^2.5.17",
-    "vue-lazyload": "^1.2.6",
-    "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "core-js": "^3.6.5",
+    "v-scroller": "^1.2.5",
+    "vant": "^2.12.39",
+    "vue": "^2.6.11",
+    "vue-router": "^3.2.0",
+    "vuex": "^3.4.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.4",
-    "@vue/cli-service": "^3.0.4",
-    "vue-template-compiler": "^2.5.17"
+    "@vue/cli-plugin-babel": "^4.5.0",
+    "@vue/cli-service": "^4.5.0",
+    "babel-plugin-import": "^1.13.3",
+    "less": "^3.0.4",
+    "less-loader": "^5.0.0",
+    "vue-template-compiler": "^2.6.11"
   }
 }

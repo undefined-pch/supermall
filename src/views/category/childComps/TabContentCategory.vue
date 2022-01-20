@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import GridView from 'common/gridView/GridView'
+  import GridView from '@/components/common/gridView/GridView'
 
   export default {
     name: "TabContentCategory",

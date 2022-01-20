@@ -1,40 +1,63 @@
 <template>
-  <tab-bar>
-    <tab-bar-item link="/home">
-      <img slot="icon" src="~assets/img/tabbar/home.svg" alt="">
-      <img slot="active-icon" src="~assets/img/tabbar/home_active.svg" alt="">
-      <div slot="text">首页</div>
-    </tab-bar-item>
-    <tab-bar-item link="/category">
-      <img slot="icon" src="~assets/img/tabbar/category.svg" alt="">
-      <img slot="active-icon" src="~assets/img/tabbar/category_active.svg" alt="">
-      <div slot="text">分类</div>
-    </tab-bar-item>
-    <tab-bar-item link="/cart">
-      <img slot="icon" src="~assets/img/tabbar/cart.svg" alt="">
-      <img slot="active-icon" src="~assets/img/tabbar/cart_active.svg" alt="">
-      <div slot="text">购物车</div>
-    </tab-bar-item>
-    <tab-bar-item link="/profile">
-      <img slot="icon" src="~assets/img/tabbar/profile.svg" alt="">
-      <img slot="active-icon" src="~assets/img/tabbar/profile_active.svg" alt="">
-      <div slot="text">我的</div>
-    </tab-bar-item>
-  </tab-bar>
+	<tab-bar>
+		<tab-bar-item path="/home">
+			<template #item-icon>
+				<img src="~assets/images/tabbar/icon01.png" alt="">
+			</template>
+			<template #item-icon-active>
+				<img src="~assets/images/tabbar/icon01_active.png" alt="">
+			</template>
+			<template #item-text>
+				<div>主页</div>
+			</template>
+		</tab-bar-item>
+		<tab-bar-item path="/category">
+			<template #item-icon>
+				<img src="~assets/images/tabbar/icon02.png" alt="">
+			</template>
+			<template #item-icon-active>
+				<img src="~assets/images/tabbar/icon02_active.png" alt="">
+			</template>
+			<template #item-text>
+				<div>分类</div>
+			</template>
+		</tab-bar-item>
+		<tab-bar-item path="cart">
+			<template #item-icon>
+				<img src="~assets/images/tabbar/icon03.png" alt="">
+			</template>
+			<template #item-icon-active>
+				<img src="~assets/images/tabbar/icon03_active.png" alt="">
+			</template>
+			<template #item-text>
+				<div>购物车</div>
+			</template>
+		</tab-bar-item>
+		<tab-bar-item path="/profile">
+			<template #item-icon>
+				<img src="~assets/images/tabbar/icon04.png" alt="">
+			</template>
+			<template #item-icon-active>
+				<img src="~assets/images/tabbar/icon04_active.png" alt="">
+			</template>
+			<template #item-text>
+				<div>我的</div>
+			</template>
+		</tab-bar-item>
+	</tab-bar>
 </template>
 
-  <script>
-    import TabBar from 'common/tabbar/TabBar'
-    import TabBarItem from 'common/tabbar/TabBarItem'
+<script>
+	import TabBar from "components/common/tabbar/TabBar.vue"
+	import TabBarItem from "components/common/tabbar/TabBarItem.vue"
+	export default {
+		name: 'MainTabBar',
+		components: {
+			TabBar,
+			TabBarItem
+		}
+	}
+</script>
 
-    export default {
-      name: "MainTabBar",
-      components: {
-        TabBar, TabBarItem
-      }
-    }
-  </script>
-
-<style scoped>
-
+<style>
 </style>

@@ -1,65 +1,59 @@
 <template>
-  <div class="tab-control">
-    <div class="tab-control-item"
-         :class="{active: currentIndex === index}"
-         @click="itemClick(index)"
-         v-for="(item, index) in titles">
-      <span>{{item}}</span>
-    </div>
-  </div>
+	<div class="tab-control-wrap">
+		<div class="tab-control-item" 
+			 v-for="(item,index) in titles"
+			 :key="index"
+			 :class="{active: index === currentIndex}"
+			 @click="tabItemClick(index)"
+		>
+			<span>{{item}}</span>
+		</div>
+	</div>
 </template>
 
 <script>
 	export default {
-		name: "TabControl",
-    props: {
-		  titles: {
-		    type: Array,
-        default() {
-		      return []
-        }
-      }
-    },
-    data: function () {
-      return {
-        currentIndex: 0
-      }
-    },
-    methods: {
-      itemClick: function (index) {
-        // 1.改变currentIndex
-        this.currentIndex = index;
-
-        // 2.发出事件
-        this.$emit('itemClick', index)
-      }
-    }
+		name: 'TabControl',
+		props: {
+			titles: {
+				type: Array,
+				default() {
+					return []
+				}
+			}
+		},
+		data() {
+			return {
+				currentIndex: 0
+			}
+		},
+		methods: {
+			tabItemClick(index) {
+				this.currentIndex = index;
+				this.$emit('tabItemClick',index)
+			}
+		}
 	}
 </script>
 
-<style scoped>
-  .tab-control {
-    display: flex;
-    text-align: center;
-    line-height: 40px;
-    font-size: 15px;
-    background-color: #fff;
-    z-index: 9;
-  }
-
-  .tab-control-item {
-    flex: 1;
-  }
-
-  .tab-control-item span {
-    padding: 5px;
-  }
-
-  .active {
-    color: var(--color-high-text);
-  }
-
-  .active span {
-    border-bottom: 2px solid var(--color-high-text);
-  }
+<style lang="less" scoped>
+	.tab-control-wrap {
+		display: flex;
+		height: 40px;
+		line-height: 40px;
+		font-size: 15px;
+		text-align: center;
+		background-color: #fff;
+		.tab-control-item {
+			flex: 1;
+			&.active{
+				color: var(--color-text);
+				span {
+					border-bottom: 2px solid var(--color-text);
+					padding: 5px;
+				}
+			}
+			
+		}
+	}
 </style>

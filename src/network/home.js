@@ -1,20 +1,19 @@
-import axios from './axios'
+import {request} from './request'
 
-export const BANNER = 'banner'
-export const RECOMMEND = 'recommend'
-
-export function getHomeMultidata() {
-  return axios({
-    url: '/home/multidata'
-  })
+//请求多个数据（banner,类目）
+export function getHomeMulitData(){
+	return request({
+		url:'/home/multidata'
+	})
 }
 
-export function getHomeData(type, page) {
-  return axios({
-    url: '/home/data',
-    params: {
-      type,
-      page
-    }
-  })
+//请求商品数据
+export function getHomeGoods(type, page){
+	return request({
+		url:'/home/data',
+		params: {
+			type,
+			page
+		}
+	})
 }

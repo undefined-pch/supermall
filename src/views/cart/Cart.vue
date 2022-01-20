@@ -1,50 +1,43 @@
 <template>
-  <div id="cart">
-    <nav-bar class="nav-bar"><div slot="center">购物车({{cartCount}})</div></nav-bar>
-    <cart-list class="cart-list" :cart-list="cartList"></cart-list>
-    <bottom-bar></bottom-bar>
-  </div>
+	<div class="cart-wrap">
+		<!-- 导航 -->
+		<nav-bar class="cart-nav">
+			<template #nav-center>购物车({{num}})</template>
+		</nav-bar>
+		<!-- 购物车bar -->
+		<cart-list></cart-list>
+		<cart-bot-bar></cart-bot-bar>
+	</div>
 </template>
 
 <script>
-  import NavBar from 'common/navbar/NavBar'
-  import CartList from './childComps/CartList'
-  import BottomBar from './childComps/BottomBar'
-
+	import NavBar from '@/components/common/navbar/NavBar.vue'
+	
+	import CartList from './childCopm/CartList.vue'
+	import CartBotBar from './childCopm/CartBotBar.vue'
 	export default {
-		name: "Cart",
-    components: {
-		  NavBar,
-      CartList,
-      BottomBar
-    },
-    computed: {
-		  cartList() {
-		    return this.$store.getters.cartList
-      },
-      cartCount() {
-		    return this.$store.getters.cartCount
-      }
-    }
+		name: 'Cart',
+		components: {
+			NavBar,
+			CartList,
+			CartBotBar
+		},
+		computed: {
+			num() {
+				return this.$store.state.cartList.length;
+			}
+		}
 	}
 </script>
 
-<style scoped>
-  #cart {
-    /*position: relative;*/
-    height: 100vh;
-  }
-
-  .nav-bar {
-    background-color: var(--color-tint);
-    font-weight: 700;
-    color: #fff;
-  }
-
-  .cart-list {
-    position: absolute;
-    top: 44px;
-    bottom: 49px;
-    width: 100%;
-  }
+<style lang="less" scoped="scoped">
+	.cart-nav {
+		color: #fff;
+		background-color: var(--color-high-text);
+		position: fixed;
+		top:0;
+		left:0;
+		right: 0;
+		// z-index: 1;
+	}
 </style>
